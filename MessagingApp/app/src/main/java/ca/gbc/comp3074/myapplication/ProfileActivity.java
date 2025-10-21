@@ -11,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class profile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     Button buttonback, buttonout;
 
@@ -32,12 +32,12 @@ public class profile extends AppCompatActivity {
         buttonout = findViewById(R.id.signoutbutton);
 
         buttonback.setOnClickListener(v -> {
-            Intent intent = new Intent(profile.this, chat.class);
+            Intent intent = new Intent(ProfileActivity.this, ChatActivity.class);
             startActivity(intent);
         });
 
         buttonout.setOnClickListener(v -> {
-            Intent intent = new Intent(profile.this, login.class);
+            Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
             startActivity(intent);
         });
 

@@ -1,0 +1,13 @@
+<resources>
+    <style name="FriendButtonStyle">
+        <!-- твои атрибуты -->
+    </style>
+
+    <style name="FriendNameStyle">
+        <!-- атрибуты имени -->
+    </style>
+
+    <style name="FriendStatusStyle">
+        <!-- атрибуты статуса -->
+    </style>
+</resources>

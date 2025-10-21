@@ -18,7 +18,7 @@ import java.util.List;
 
 import ca.gbc.comp3074.myapplication.adapters.ChatAdapter;
 
-public class chat extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     EditText editTextMessage;
@@ -59,7 +59,7 @@ public class chat extends AppCompatActivity {
         });
 
         buttonProfile.setOnClickListener(v -> {
-            Intent intent = new Intent(chat.this, profile.class);
+            Intent intent = new Intent(ChatActivity.this, ProfileActivity.class);
             finish();
         });
     }

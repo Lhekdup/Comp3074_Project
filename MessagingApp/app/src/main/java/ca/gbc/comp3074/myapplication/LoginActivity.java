@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.HashMap;
 
-public class login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     TextView signupbut;
     Button button;
@@ -50,13 +50,13 @@ public class login extends AppCompatActivity {
                 String loginpassword = password.getText().toString().trim();
                 if (dummyUsers.containsKey(loginemail) &&
                         dummyUsers.get(loginemail).equals(loginpassword)) {
-                    Toast.makeText(login.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(login.this, profile.class);
+                    Intent intent = new Intent(LoginActivity.this, FriendListActivity.class);
                     intent.putExtra("email", loginemail);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(login.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -64,7 +64,7 @@ public class login extends AppCompatActivity {
         signupbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(login.this, registration.class);
+                Intent intent = new Intent(LoginActivity.this, FriendListActivity.class);
                 startActivity(intent);
                 finish();
             }
