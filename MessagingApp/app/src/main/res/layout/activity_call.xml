@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".CallActivity">
+
+    <ImageView
+        android:id="@+id/call_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/call_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/call_backtomessagesbutton"
+        android:layout_width="63dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/call_backtomessagesbutton"
+        android:contentDescription="Back to chat"
+        app:layout_constraintBottom_toTopOf="@id/call_callendbutton"
+        app:layout_constraintEnd_toStartOf="@id/call_mutebutton"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toEndOf="@id/call_screensharebutton" />
+
+    <ImageView
+        android:id="@+id/call_icon"
+        android:layout_width="324dp"
+        android:layout_height="359dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/call_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/call_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-100dp"
+        android:fontFamily="@font/kaushanscript_regular"
+        android:text="Calling Friend 1"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/call_icon" />
+
+    <ImageButton
+        android:id="@+id/call_cameraoffbutton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="-20dp"
+        android:background="@drawable/call_cameraoffbutton"
+        android:contentDescription="Camera Off"
+        app:layout_constraintBottom_toTopOf="@id/call_callendbutton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/call_mutebutton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="-20dp"
+        android:background="@drawable/call_mutebutton"
+        android:contentDescription="Mute"
+        app:layout_constraintBottom_toTopOf="@id/call_callendbutton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/call_screensharebutton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/call_screensharebutton"
+        android:contentDescription="Share Screen"
+        app:layout_constraintBottom_toTopOf="@id/call_callendbutton"
+        app:layout_constraintEnd_toStartOf="@id/call_mutebutton"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toEndOf="@id/call_cameraoffbutton" />
+
+    <ImageButton
+        android:id="@+id/call_callendbutton"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/call_callendbutton"
+        android:contentDescription="End Call"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

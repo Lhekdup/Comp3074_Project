@@ -59,7 +59,7 @@ public class RegistrationActivity extends AppCompatActivity {
         loginbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistrationActivity.this, FriendListActivity.class);
+                Intent intent = new Intent(RegistrationActivity.this, SplashActivity.class);
                 startActivity(intent);
                 finish();
             }

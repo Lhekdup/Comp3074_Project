@@ -13,30 +13,46 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MessagingApp"
         tools:targetApi="31">
-        <activity
-            android:name=".FriendListActivity"
-            android:exported="false" />
+
+        <!-- Start screen -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Login & Registration -->
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".RegistrationActivity"
             android:exported="false" />
+
+        <!-- Chat screens -->
+        <activity
+            android:name=".FriendListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatListActivity"
+            android:exported="false" />
         <activity
             android:name=".ChatActivity"
             android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-    </application>
 
+        <!-- Call and related features -->
+        <activity
+            android:name=".CallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CameraOffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScreenShareActivity"
+            android:exported="false" />
+
+    </application>
 </manifest>

@@ -2,14 +2,12 @@ package ca.gbc.comp3074.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,33 +20,47 @@ public class ChatActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     EditText editTextMessage;
-    Button buttonSend, buttonProfile;
+    ImageButton btnBack;
     List<String> messages;
     ChatAdapter adapter;
+
+    TextView chatFriendName, chatFriendStatus;
+    ImageView chatFriendIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_chat);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        recyclerView = findViewById(R.id.recyclerViewChat);
+        // Get data from previous activity
+        String friendName = getIntent().getStringExtra("friendName");
+        String friendStatus = getIntent().getStringExtra("friendStatus");
+        int friendIcon = getIntent().getIntExtra("friendIcon", R.drawable.friendlist_icon);
+
+        // Find views
+        chatFriendName = findViewById(R.id.chat_friend_name);
+        chatFriendStatus = findViewById(R.id.chat_friend_status);
+        chatFriendIcon = findViewById(R.id.chat_friend_icon);
+        btnBack = findViewById(R.id.btn_back);
         editTextMessage = findViewById(R.id.editTextMessage);
-        buttonSend = findViewById(R.id.buttonSend);
-        buttonProfile = findViewById(R.id.buttonProfile);
+        recyclerView = findViewById(R.id.recyclerViewChat);
 
+        // Set friend data
+        chatFriendName.setText(friendName != null ? friendName : "Unknown");
+        chatFriendStatus.setText(friendStatus != null ? friendStatus : "Last seen: Unknown");
+        chatFriendIcon.setImageResource(friendIcon);
+
+        // Back button
+        btnBack.setOnClickListener(v -> onBackPressed());
+
+        // Setup chat list
         messages = new ArrayList<>();
         adapter = new ChatAdapter(messages);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-        buttonSend.setOnClickListener(v -> {
+        // Send message
+        findViewById(R.id.buttonSend).setOnClickListener(v -> {
             String msg = editTextMessage.getText().toString().trim();
             if (!msg.isEmpty()) {
                 messages.add(msg);
@@ -58,9 +70,13 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-        buttonProfile.setOnClickListener(v -> {
-            Intent intent = new Intent(ChatActivity.this, ProfileActivity.class);
-            finish();
+        // Open call screen
+        findViewById(R.id.btn_call).setOnClickListener(v -> {
+            Intent intent = new Intent(ChatActivity.this, CallActivity.class);
+            intent.putExtra("friendName", chatFriendName.getText().toString());
+            intent.putExtra("friendIcon", R.drawable.friendlist_icon);
+            startActivity(intent);
         });
     }
 }
+
