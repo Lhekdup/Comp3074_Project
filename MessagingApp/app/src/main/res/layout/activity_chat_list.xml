@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/chatlist_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/chatlist_background"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp">
+
+            <ImageView
+                android:id="@+id/user_avatar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/chatlist_youricon"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- 💫 Contact container -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contact_container"
+                android:layout_width="410dp"
+                android:layout_height="600dp">
+
+                <ImageView
+                    android:id="@+id/chatlist_buttons"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/chatlist_contactbutton"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <!-- Friend 1 -->
+                <ImageView
+                    android:id="@+id/icon_friend1"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="50dp"/>
+                <TextView
+                    android:id="@+id/name_friend1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 1"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend1"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend1"/>
+                <TextView
+                    android:id="@+id/status_friend1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online now"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend1"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend1"/>
+                <Button
+                    android:id="@+id/btn_friend1"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend1"/>
+
+                <!-- Friend 2 -->
+                <ImageView
+                    android:id="@+id/icon_friend2"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend1"
+                    android:layout_marginTop="30dp"/>
+                <TextView
+                    android:id="@+id/name_friend2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 2"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend2"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend2"/>
+                <TextView
+                    android:id="@+id/status_friend2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Offline"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend2"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend2"/>
+                <Button
+                    android:id="@+id/btn_friend2"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend2"/>
+
+                <!-- Friend 3 -->
+                <ImageView
+                    android:id="@+id/icon_friend3"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend2"
+                    android:layout_marginTop="25dp"/>
+                <TextView
+                    android:id="@+id/name_friend3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 3"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend3"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend3"/>
+                <TextView
+                    android:id="@+id/status_friend3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online now"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend3"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend3"/>
+                <Button
+                    android:id="@+id/btn_friend3"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend3"/>
+
+                <!-- Friend 4 -->
+                <ImageView
+                    android:id="@+id/icon_friend4"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend3"
+                    android:layout_marginTop="30dp"/>
+                <TextView
+                    android:id="@+id/name_friend4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 4"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend4"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend4"/>
+                <TextView
+                    android:id="@+id/status_friend4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last seen: March 10"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend4"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend4"/>
+                <Button
+                    android:id="@+id/btn_friend4"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend4"/>
+
+                <!-- Friend 5 -->
+                <ImageView
+                    android:id="@+id/icon_friend5"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend4"
+                    android:layout_marginTop="30dp"/>
+                <TextView
+                    android:id="@+id/name_friend5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 5"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend5"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend5"/>
+                <TextView
+                    android:id="@+id/status_friend5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Offline"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend5"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend5"/>
+                <Button
+                    android:id="@+id/btn_friend5"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend5"/>
+
+                <!-- Friend 6 -->
+                <ImageView
+                    android:id="@+id/icon_friend6"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend5"
+                    android:layout_marginTop="25dp"/>
+                <TextView
+                    android:id="@+id/name_friend6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 6"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend6"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend6"/>
+                <TextView
+                    android:id="@+id/status_friend6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online now"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend6"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend6"/>
+                <Button
+                    android:id="@+id/btn_friend6"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend6"/>
+
+                <!-- Friend 7 -->
+                <ImageView
+                    android:id="@+id/icon_friend7"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend6"
+                    android:layout_marginTop="30dp"/>
+                <TextView
+                    android:id="@+id/name_friend7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 7"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend7"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend7"/>
+                <TextView
+                    android:id="@+id/status_friend7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last seen: March 11"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend7"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend7"/>
+                <Button
+                    android:id="@+id/btn_friend7"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend7"/>
+
+                <!-- Friend 8 -->
+                <ImageView
+                    android:id="@+id/icon_friend8"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend7"
+                    android:layout_marginTop="25dp"/>
+                <TextView
+                    android:id="@+id/name_friend8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 8"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend8"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend8"/>
+                <TextView
+                    android:id="@+id/status_friend8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Offline"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend8"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend8"/>
+                <Button
+                    android:id="@+id/btn_friend8"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend8"/>
+
+                <!-- Friend 9 -->
+                <ImageView
+                    android:id="@+id/icon_friend9"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend8"
+                    android:layout_marginTop="30dp"/>
+                <TextView
+                    android:id="@+id/name_friend9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 9"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend9"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend9"/>
+                <TextView
+                    android:id="@+id/status_friend9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online now"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend9"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend9"/>
+                <Button
+                    android:id="@+id/btn_friend9"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend9"/>
+                <!-- Friend 10 -->
+                <ImageView
+                    android:id="@+id/icon_friend10"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/friendlist_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/icon_friend9"
+                    android:layout_marginTop="25dp"/>
+                <TextView
+                    android:id="@+id/name_friend10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friend 10"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/vampiroone_regular"
+                    app:layout_constraintStart_toEndOf="@id/icon_friend10"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend10"/>
+                <TextView
+                    android:id="@+id/status_friend10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online now"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/kaushanscript_regular"
+                    app:layout_constraintStart_toStartOf="@id/name_friend10"
+                    app:layout_constraintTop_toBottomOf="@id/name_friend10"/>
+                <Button
+                    android:id="@+id/btn_friend10"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/icon_friend10"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

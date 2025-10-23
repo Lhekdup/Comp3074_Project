@@ -1,59 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".chat">
+    tools:context=".ChatActivity">
+
+    <ImageView
+        android:id="@+id/chat_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/chat_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/chat_profilefriend"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:src="@drawable/chat_profilefriend"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:background="@drawable/chat_backbutton"
+        android:contentDescription="Back"
+        app:layout_constraintTop_toTopOf="@id/chat_profilefriend"
+        app:layout_constraintBottom_toBottomOf="@id/chat_profilefriend"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="0dp" />
+
+    <TextView
+        android:id="@+id/chat_friend_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:fontFamily="@font/vampiroone_regular"
+        android:text="Friend 1"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/chat_profilefriend"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintTop_toTopOf="@id/chat_profilefriend"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <TextView
+        android:id="@+id/chat_friend_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last seen: March 10"
+        android:textColor="#CCFFFFFF"
+        android:textSize="12sp"
+        android:fontFamily="@font/kaushanscript_regular"
+        app:layout_constraintStart_toStartOf="@id/chat_friend_name"
+        app:layout_constraintTop_toBottomOf="@id/chat_friend_name" />
+
+    <ImageView
+        android:id="@+id/chat_friend_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/friendlist_icon"
+        app:layout_constraintBottom_toBottomOf="@id/chat_profilefriend"
+        app:layout_constraintEnd_toStartOf="@id/btn_call"
+        app:layout_constraintTop_toTopOf="@id/chat_profilefriend"
+        app:layout_constraintVertical_bias="0.55" />
+
+    <ImageButton
+        android:id="@+id/btn_call"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/chat_callbutton"
+        android:contentDescription="Call"
+        app:layout_constraintTop_toTopOf="@id/chat_profilefriend"
+        app:layout_constraintBottom_toBottomOf="@id/chat_profilefriend"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewChat"
-        android:layout_width="411dp"
-        android:layout_height="606dp"
-        app:layout_constraintBottom_toTopOf="@id/messageInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/messageInputLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/chat_profilefriend"
+        app:layout_constraintBottom_toTopOf="@id/chat_textfield"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/chat_textfield"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="16dp"
-        android:orientation="horizontal"
-        android:padding="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/chat_textfield"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextMessage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Type a message" />
+    <EditText
+        android:id="@+id/editTextMessage"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:hint="Type a message..."
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/white"
+        android:textColorHint="#E0E0E0"
+        android:paddingHorizontal="40dp"
+        app:layout_constraintBottom_toBottomOf="@id/chat_textfield"
+        app:layout_constraintTop_toTopOf="@id/chat_textfield"
+        app:layout_constraintStart_toStartOf="@id/chat_textfield"
+        app:layout_constraintEnd_toEndOf="@id/chat_textfield" />
 
-        <Button
-            android:id="@+id/buttonSend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Send" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/buttonProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:text="Profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    <ImageView
+        android:id="@+id/buttonSend"
+        android:layout_width="44dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="40dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/chat_sendbutton"
+        app:layout_constraintBottom_toBottomOf="@id/chat_textfield"
+        app:layout_constraintEnd_toEndOf="@id/chat_textfield"
+        app:layout_constraintTop_toTopOf="@id/chat_textfield"
+        app:layout_constraintVertical_bias="0.448" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

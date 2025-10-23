@@ -14,7 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class registration extends AppCompatActivity {
+public class RegistrationActivity extends AppCompatActivity {
 
     TextView loginbut;
     Button button;
@@ -43,13 +43,13 @@ public class registration extends AppCompatActivity {
             String signuppassword2 = password2.getText().toString().trim();
 
             if (signupemail.isEmpty() || signuppassword.isEmpty()) {
-                Toast.makeText(registration.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistrationActivity.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
             } else if (!signuppassword.equals(signuppassword2)) {
-                Toast.makeText(registration.this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistrationActivity.this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
             } else {
-                login.dummyUsers.put(signupemail, signuppassword);
-                Toast.makeText(registration.this, "User registered!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(registration.this, login.class);
+                LoginActivity.dummyUsers.put(signupemail, signuppassword);
+                Toast.makeText(RegistrationActivity.this, "User registered!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                 intent.putExtra("email", signupemail);
                 startActivity(intent);
                 finish();
@@ -59,7 +59,7 @@ public class registration extends AppCompatActivity {
         loginbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(registration.this, login.class);
+                Intent intent = new Intent(RegistrationActivity.this, SplashActivity.class);
                 startActivity(intent);
                 finish();
             }
