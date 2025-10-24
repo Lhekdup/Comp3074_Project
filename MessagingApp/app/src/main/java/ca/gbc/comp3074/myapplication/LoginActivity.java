@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,9 +20,8 @@ import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextView signupbut;
-    Button button;
-    EditText email, password;
+    EditText emailInput, passwordInput;
+    ImageButton loginButton, signupButton;
 
     public static HashMap<String, String> dummyUsers = new HashMap<>();
 
@@ -35,19 +36,19 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
-        email = findViewById(R.id.editTextLogEmailAddress);
-        password = findViewById(R.id.editTextLogPassword);
-        button = findViewById(R.id.logbutton);
-        signupbut = findViewById(R.id.signupbutton);
+        emailInput = findViewById(R.id.inputEmail);
+        passwordInput = findViewById(R.id.inputPassword);
+        loginButton = findViewById(R.id.logbutton);
+        signupButton = findViewById(R.id.signupbutton);
 
         dummyUsers.put("tlhekdup@yahoo.ca", "password123");
         dummyUsers.put("lhekduptenzin@gmail.com", "password321");
 
-        button.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String loginemail = email.getText().toString().trim();
-                String loginpassword = password.getText().toString().trim();
+                String loginemail = emailInput.getText().toString().trim();
+                String loginpassword = passwordInput.getText().toString().trim();
                 if (dummyUsers.containsKey(loginemail) &&
                         dummyUsers.get(loginemail).equals(loginpassword)) {
                     Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        signupbut.setOnClickListener(new View.OnClickListener() {
+        signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
