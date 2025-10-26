@@ -34,14 +34,22 @@
             android:paddingTop="40dp"
             android:paddingBottom="40dp">
 
+            <!-- 💫 Contact container -->
+
+            <ImageButton
+                android:id="@+id/backbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cameraoff_backbutton"
+                app:srcCompat="@drawable/cameraoff_backbutton" />
+
             <ImageView
                 android:id="@+id/user_avatar"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@drawable/chatlist_youricon"
-                android:layout_marginBottom="20dp"/>
+                android:layout_width="128dp"
+                android:layout_height="109dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/chatlist_youricon" />
 
-            <!-- 💫 Contact container -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/contact_container"
                 android:layout_width="410dp"
@@ -436,7 +444,12 @@
                     android:layout_height="60dp"
                     android:background="@android:color/transparent"
                     app:layout_constraintTop_toTopOf="@id/icon_friend10"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
+
+
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

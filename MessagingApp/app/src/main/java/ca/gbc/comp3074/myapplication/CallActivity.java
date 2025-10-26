@@ -13,7 +13,7 @@ public class CallActivity extends AppCompatActivity {
     // UI elements
     ImageView callIcon;
     TextView callStatusText;
-    ImageButton btnBackToMessages, btnEndCall, btnMute, btnCameraOff, btnScreenShare;
+    ImageButton btnBackToMessages, btnEndCall, btnMute, btnCameraOff, btnScreenShare, backbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class CallActivity extends AppCompatActivity {
         btnMute = findViewById(R.id.call_mutebutton);
         btnCameraOff = findViewById(R.id.call_cameraoffbutton);
         btnScreenShare = findViewById(R.id.call_screensharebutton);
+        backbutton = findViewById(R.id.backbutton);
 
         // Get friend data from intent
         String friendName = getIntent().getStringExtra("friendName");
@@ -80,6 +81,12 @@ public class CallActivity extends AppCompatActivity {
             Intent intent = new Intent(CallActivity.this, ScreenShareActivity.class);
             intent.putExtra("friendName", friendName);
             intent.putExtra("friendIcon", friendIcon);
+            startActivity(intent);
+        });
+
+
+        backbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(CallActivity.this, FriendListActivity.class);
             startActivity(intent);
         });
     }

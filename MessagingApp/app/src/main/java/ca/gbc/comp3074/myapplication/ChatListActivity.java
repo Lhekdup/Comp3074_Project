@@ -4,15 +4,20 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ChatListActivity extends AppCompatActivity {
 
+    ImageButton backbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_list);
+
+        backbutton = findViewById(R.id.backbutton);
 
         // Friend buttons from layout
         int[] friendButtons = {
@@ -68,6 +73,11 @@ public class ChatListActivity extends AppCompatActivity {
                 startActivity(intent, animation);
             });
         }
+
+        backbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(ChatListActivity.this, FriendListActivity.class);
+            startActivity(intent);
+        });
     }
 }
 
