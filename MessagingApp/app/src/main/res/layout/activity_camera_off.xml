@@ -19,18 +19,6 @@
         app:srcCompat="@drawable/cameraoff_background" />
 
     <!-- Back Camera Button -->
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.525"
-        android:background="@drawable/cameraoff_switchtobackcamerabutton"
-        app:srcCompat="@drawable/cameraoff_switchtobackcamerabutton" />
 
     <!-- Back Button -->
     <ImageButton
@@ -47,7 +35,7 @@
 
     <!-- Camera On Button -->
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/frontCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,4 +46,5 @@
         app:layout_constraintVertical_bias="0.708"
         android:background="@drawable/cameraoff_turnonthecamerabutton"
         app:srcCompat="@drawable/cameraoff_turnonthecamerabutton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -105,5 +105,18 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/call_background"
+        app:layout_constraintEnd_toEndOf="@+id/call_background"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/call_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018"
+        android:background="@drawable/chat_backbutton"
+        app:srcCompat="@drawable/chat_backbutton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

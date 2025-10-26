@@ -1,7 +1,9 @@
 package ca.gbc.comp3074.myapplication;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -13,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class CameraOffActivity extends AppCompatActivity {
 
-    ImageButton backButton;
+    ImageButton backButton, frontCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,24 @@ public class CameraOffActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        frontCamera = findViewById(R.id.frontCamera);
         backButton = findViewById(R.id.backbutton);
+
+        frontCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent();
+                    intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
